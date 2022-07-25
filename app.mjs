@@ -1,17 +1,24 @@
 function startApp() {
-    // Your entire app should not necessarily be coded inside this 
-    // single function (though there's no penalty for that), 
-    // so create and use/call additional functions from here
-  
-    // pls remove the below and make some magic in here!
-    console.log('make magic in here!');
-  
-    const header = document.querySelector('h2');
-    if(header) {
-      header.textContent = 'make some magic here!!';
-    }
-  };
-  
-  // ======= DO NOT EDIT ============== //
-  export default startApp;
-  // ======= EEND DO NOT EDIT ========= //
+    const redact = document.getElementById("redact");
+    redact.addEventListener("click", () => {
+        // Get the sentence and the word to redact.
+        const msg = document.getElementById("msg").value
+        const word = document.getElementById("word").value
+        console.log(msg, word)
+
+        const result = document.getElementById("result")
+
+
+        // Replace each occurence of `word` with ***
+        const redactedMsg = msg.replaceAll(word, '***')
+        result.value  = redactedMsg
+
+        console.log(msg, result.value)
+    });
+
+}
+
+
+// ======= DO NOT EDIT ============== //
+export default startApp;
+// ======= EEND DO NOT EDIT ========= //
